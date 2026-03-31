@@ -1,0 +1,37 @@
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer-inner">
+        <div className="footer-col">
+          <h3>Rob Fiero</h3>
+          <p className="footer-role">Senior Software Engineering Manager</p>
+          <p className="footer-role">Cloud Platforms • Distributed Systems</p>
+          <p className="footer-summary">
+            I design and build modern cloud-based systems and real-time applications,
+            while also supporting community events and creative work.
+          </p>
+        </div>
+
+        <div className="footer-col">
+          <h3>CONNECT</h3>
+          <a href="mailto:rob_fiero@yahoo.com?subject=Introduction" className="footer-link">
+            <FaEnvelope /> <span>Email</span>
+          </a>
+          <a href="https://github.com/robfiero" target="_blank" rel="noreferrer" className="footer-link">
+            <FaGithub /> <span>GitHub</span>
+          </a>
+          <a href="#" className="footer-link">
+            <FaGithub /> <span>GitHub Projects</span>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="footer-link">
+            <FaLinkedin /> <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="copyright">© 2026 Rob Fiero • Built with React</div>
+    </footer>
+  )
+}
