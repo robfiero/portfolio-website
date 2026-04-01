@@ -19,7 +19,7 @@ const cards = [
     text:
       'As a side hobby I have been taking some of the artistic photos from my collection and re-imagining them in artistic styles that I enjoy. Please check out some of my work, and check back as I add more art to the collection.',
     button: 'VIEW MY CREATIVE WORKS',
-    link: '#',
+    link: 'https://sites.google.com/view/robfierocreative/home',
     fit: 'cover',
   },
   {
@@ -28,7 +28,7 @@ const cards = [
     text:
       'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of both Brookline and Milford, NH. There are 5 races with over 700 participants each October, and has raised over $350,000 since 2009! I’ve been blessed to be the Race Director since 2022 and love the race and the community.',
     button: 'LEARN MORE',
-    link: '#',
+    link: 'https://sites.google.com/site/ghosttrainrailtrailrace/',
     fit: 'contain',
   },
   {
@@ -37,7 +37,7 @@ const cards = [
     text:
       'Flat Rock Trail Race is a fundraising trail race that benefits the Humane Society for Greater Nashua, where I have volunteered with and fundraised for since 2009. I started this race in lovely Dunstable, MA in 2025 and I’m excited to see where it grows.',
     button: 'LEARN MORE',
-    link: '#',
+    link: 'https://sites.google.com/view/flatrocktrailrace/home',
     fit: 'contain',
   },
 ]
@@ -55,7 +55,7 @@ function ProjectCard({ image, title, text, button, link, fit }) {
   )
 
   return link && link !== '#' ? (
-    <a className="card" href={link} target="_blank" rel="noreferrer">
+    <a className="card" href={link} target="_blank" rel="noopener noreferrer">
       {cardContent}
     </a>
   ) : (
@@ -68,7 +68,7 @@ export default function Projects() {
     <section className="projects">
       <div className="container">
         <h2>RECENT PROJECTS</h2>
-        <p className="subtitle">These are some projects that I&apos;m currently working on</p>
+        <p className="subtitle">A selection of technical, creative, and community work.</p>
 
         <div className="grid">
           {cards.map((card) => (

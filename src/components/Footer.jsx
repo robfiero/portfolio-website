@@ -19,13 +19,13 @@ export default function Footer() {
           <a href="mailto:rob_fiero@yahoo.com?subject=Introduction" className="footer-link">
             <FaEnvelope /> <span>Email</span>
           </a>
-          <a href="https://github.com/robfiero" target="_blank" rel="noreferrer" className="footer-link">
+          <a href="https://github.com/robfiero" target="_blank" rel="noopener noreferrer" className="footer-link">
             <FaGithub /> <span>GitHub</span>
           </a>
-          <a href="#" className="footer-link">
+          <a href="https://github.com/robfiero?tab=repositories" target="_blank" rel="noopener noreferrer" className="footer-link">
             <FaGithub /> <span>GitHub Projects</span>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="footer-link">
+          <a href="https://www.linkedin.com/in/robert-fiero/" target="_blank" rel="noopener noreferrer" className="footer-link">
             <FaLinkedin /> <span>LinkedIn</span>
           </a>
         </div>
