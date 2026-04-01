@@ -8,7 +8,7 @@ const cards = [
     image: overview,
     title: "TODAY'S OVERVIEW",
     text:
-      "I designed and built Today’s Overview as a full-stack engineering project to explore modern development patterns and real-time data systems. It aggregates news, weather, markets, and local events into a single dashboard using an event-driven architecture, live updates, and AWS deployment.",
+      <span>I designed and built Today’s Overview as a full-stack engineering project to explore modern development patterns and real-time data systems. It aggregates news, weather, markets, and local events into a single dashboard using an event-driven architecture, live updates, and AWS deployment.  Check out my other projects on <a href="https://github.com/robfiero?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>, and stay tuned for more updates to this one as I continue to add features and improvements!</span>,
     button: 'TRY IT OUT',
     link: 'https://todaysoverview.robfiero.net',
     fit: 'cover',
@@ -69,7 +69,7 @@ export default function Projects() {
   return (
     <section className="projects">
       <div className="container">
-        <h2>RECENT PROJECTS</h2>
+        <h2>Recent Projects</h2>
         <p className="subtitle">These are some projects that I&apos;m currently working on</p>
 
         <div className="grid">
