@@ -26,7 +26,7 @@ const cards = [
     image: ghost,
     title: 'GHOST TRAIN TRAIL RACE',
     text:
-      'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of both Brookline and Milford, NH. There are 5 races with over 700 participants each October, and has raised over $350,000 since 2009! I’ve been blessed to be the Race Director since 2022 and love the race and the community.',
+      'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of both Brookline and Milford, NH. There are 5 races totalling over 700 participants each October, and has raised over $350,000 since its inception! I’ve been blessed to be the Race Director since 2022 and love the race and the community.',
     button: 'LEARN MORE',
     link: 'https://sites.google.com/site/ghosttrainrailtrailrace/',
     fit: 'contain',
@@ -54,12 +54,14 @@ function ProjectCard({ image, title, text, button, link, fit }) {
     </>
   )
 
+  const cardClass = `card ${fit === 'contain' ? (title.includes('GHOST') ? 'card--ghost' : 'card--flat') : ''}`
+
   return link && link !== '#' ? (
-    <a className="card" href={link} target="_blank" rel="noopener noreferrer">
+    <a className={cardClass} href={link} target="_blank" rel="noopener noreferrer">
       {cardContent}
     </a>
   ) : (
-    <div className="card">{cardContent}</div>
+    <div className={cardClass}>{cardContent}</div>
   )
 }
 

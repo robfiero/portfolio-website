@@ -141,7 +141,7 @@ img {
 }
 
 .projects {
-  padding: 3rem 0 4.5rem;
+  padding: 3rem 0 5rem;
   background: linear-gradient(90deg, var(--bg) 0%, #112028 50%, var(--bg) 100%);
   border-bottom: 3px solid var(--divider);
 }
@@ -181,6 +181,11 @@ img {
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
+.card .button-like {
+  margin-top: auto;
+  padding-top: 1.2rem;
+}
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
@@ -209,6 +214,26 @@ img {
 .card-image.contain {
   object-fit: contain;
   padding: 0.35rem;
+}
+
+.card--logo .card-image-wrap {
+  height: 220px;
+}
+
+.card--logo {
+  padding-bottom: 1.5rem;
+}
+
+.card--logo .button-like {
+  margin-top: 1.2rem;
+}
+
+.card--ghost .card-image {
+  transform: scale(0.85);
+}
+
+.card--flat .card-image {
+  transform: scale(0.95);
 }
 
 .card h3 {
