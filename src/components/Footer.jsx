@@ -10,7 +10,7 @@ export default function Footer() {
           <p className="footer-role">Cloud Platforms • Distributed Systems</p>
           <p className="footer-summary">
             I design and build modern cloud-based systems and real-time applications,
-            while also supporting community events and creative work.
+            while also supporting community events and creative projects.
           </p>
         </div>
 

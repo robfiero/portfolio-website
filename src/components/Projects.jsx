@@ -8,7 +8,7 @@ const cards = [
     image: overview,
     title: "TODAY'S OVERVIEW",
     text:
-      <span>I designed and built Today’s Overview as a full-stack engineering project to explore modern development patterns and real-time data systems. It aggregates news, weather, markets, and local events into a single dashboard using an event-driven architecture, live updates, and AWS deployment.  Check out my other projects on <a href="https://github.com/robfiero?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>, and stay tuned for more updates to this one as I continue to add features and improvements!</span>,
+      <span>I designed and built Today’s Overview as a full-stack engineering project focused on modern development patterns and real-time data systems. It brings together news, weather, markets, and local events in a single dashboard using an event-driven architecture, live updates, and AWS deployment.  Check out my other projects on <a href="https://github.com/robfiero?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>!</span>,
     button: 'TRY IT OUT',
     link: 'https://todaysoverview.robfiero.net',
     fit: 'cover',
@@ -17,7 +17,7 @@ const cards = [
     image: creative,
     title: 'CREATIVE',
     text:
-      'As a side hobby I have been taking some of the artistic photos from my collection and re-imagining them in artistic styles that I enjoy. Please check out some of my work, and check back as I add more art to the collection.',
+      'As a creative side project, I have been reimagining photographs from my collection in artistic styles that I enjoy. Please check out some of my work, and check back as I add more to the collection.',
     button: 'VIEW MY CREATIVE WORKS',
     link: '#',
     fit: 'cover',
@@ -26,7 +26,7 @@ const cards = [
     image: ghost,
     title: 'GHOST TRAIN TRAIL RACE',
     text:
-      'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of both Brookline and Milford, NH. There are 5 races totalling over 700 participants each October, and has raised over $350,000 since its inception! I’ve been blessed to be the Race Director since 2022 and love the race and the community.',
+      'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of Brookline and Milford, NH. The event includes five races, draws more than 700 participants each October, and has raised over $350,000 since its inception. I’ve been proud to serve as Race Director since 2022 and love the race and the community around it.',
     button: 'LEARN MORE',
     link: '#',
     fit: 'contain',
@@ -35,7 +35,7 @@ const cards = [
     image: flatrock,
     title: 'FLAT ROCK TRAIL RACE',
     text:
-      'Flat Rock Trail Race is a fundraising trail race that benefits the Humane Society for Greater Nashua, where I have volunteered with and fundraised for since 2009. I started this race in lovely Dunstable, MA in 2025 and I’m excited to see where it grows.',
+      'Flat Rock Trail Race is a fundraising trail race that benefits the Humane Society for Greater Nashua, an organization I’ve supported through volunteering and fundraising since 2009. I launched the race in Dunstable, MA in 2025 and am excited to see how it grows.',
     button: 'LEARN MORE',
     link: '#',
     fit: 'contain',
@@ -70,7 +70,7 @@ export default function Projects() {
     <section className="projects">
       <div className="container">
         <h2>Recent Projects</h2>
-        <p className="subtitle">These are some projects that I&apos;m currently working on</p>
+        <p className="subtitle">A selection of technical, creative, and community work.</p>
 
         <div className="grid">
           {cards.map((card) => (
