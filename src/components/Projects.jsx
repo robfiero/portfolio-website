@@ -67,7 +67,7 @@ export default function Projects() {
   return (
     <section className="projects">
       <div className="container">
-        <h2>RECENT PROJECTS</h2>
+        <h2>Recent Projects</h2>
         <p className="subtitle">A selection of technical, creative, and community work.</p>
 
         <div className="grid">
