@@ -19,7 +19,7 @@ const cards = [
     text:
       'As a creative side project, I have been reimagining photographs from my collection in artistic styles that I enjoy. Please check out some of my work, and check back as I add more to the collection.',
     button: 'VIEW MY CREATIVE WORKS',
-    link: '#',
+    link: 'https://sites.google.com/view/robfierocreative/home',
     fit: 'cover',
   },
   {
@@ -28,7 +28,7 @@ const cards = [
     text:
       'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of Brookline and Milford, NH. The event includes five races, draws more than 700 participants each October, and has raised over $350,000 since its inception. I’ve been proud to serve as Race Director since 2022 and love the race and the community around it.',
     button: 'LEARN MORE',
-    link: '#',
+    link: 'https://sites.google.com/site/ghosttrainrailtrailrace/',
     fit: 'contain',
   },
   {
@@ -37,7 +37,7 @@ const cards = [
     text:
       'Flat Rock Trail Race is a fundraising trail race that benefits the Humane Society for Greater Nashua, an organization I’ve supported through volunteering and fundraising since 2009. I launched the race in Dunstable, MA in 2025 and am excited to see how it grows.',
     button: 'LEARN MORE',
-    link: '#',
+    link: 'https://sites.google.com/view/flatrocktrailrace/home',
     fit: 'contain',
   },
 ]
