@@ -10,10 +10,12 @@ export default function Hero() {
 
           <div className="hero-sub">
             <div>
-              SENIOR SOFTWARE ENGINEERING MANAGER | CLOUD PLATFORMS | DISTRIBUTED SYSTEMS |
-              ENTERPRISE INFRASTRUCTURE
+              Software Engineering Manager | UI Development | Java | Cloud Platforms | Distributed Systems
             </div>
-            <div>FUNDRAISER | EVENT DIRECTOR | CREATIVE ARTWORK</div>
+            <div>
+              Team And Community Builder | Runner | Ultramarathoner | Race Director | Charity Fundraiser | Photographer |
+              Creative Artwork | Volunteer
+            </div>
           </div>
         </div>
       </div>

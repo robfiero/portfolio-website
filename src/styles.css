@@ -95,7 +95,7 @@ img {
 }
 
 .hero-tagline {
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 3.5rem;
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
   font-weight: 600;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
@@ -107,8 +107,8 @@ img {
   color: #f0c94a;
   font-size: clamp(0.95rem, 1.5vw, 1.35rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
 }
 
@@ -140,6 +140,34 @@ img {
   line-height: 1.45;
   color: var(--about-body);
   font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+}
+
+.about-body {
+  display: grid;
+  grid-template-columns: minmax(0, 138px) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.about-photo {
+  width: 138px;
+  height: 138px;
+  margin-top: 0.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  display: grid;
+  gap: 0.8rem;
 }
 
 .about-content p,
@@ -179,9 +207,59 @@ img {
   line-height: 1.45;
 }
 
+.projects .subtitle a,
+.projects .subtitle a:visited {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.projects .subtitle a:hover,
+.projects .subtitle a:focus {
+  color: var(--gold-hover);
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.filter-button {
+  border: 1px solid rgba(200, 168, 77, 0.9);
+  background: transparent;
+  color: var(--text);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--gold-hover);
+}
+
+.filter-button.active {
+  background: #edd17d;
+  border-color: transparent;
+  color: #0b1419;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.filter-button:focus-visible {
+  outline: 2px solid var(--gold-hover);
+  outline-offset: 2px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   align-items: stretch;
 }
@@ -225,9 +303,21 @@ img {
   margin-bottom: 1.4rem;
 }
 
+.card-image-wrap.preview {
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.card-image-wrap.preview .card-image {
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
 .card-image {
   width: 100%;
   height: 100%;
+  transition: transform 160ms ease, filter 160ms ease;
 }
 
 .card-image.cover {
@@ -242,8 +332,25 @@ img {
 .card h3 {
   margin: 0.35rem 0 1rem;
   font-size: 1.8rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   font-weight: 600;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 0.5rem;
+  margin: -0.35rem 0 0.9rem;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.2rem 0.45rem;
 }
 
 .card p {
@@ -281,9 +388,39 @@ img {
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
+.button-like.disabled {
+  opacity: 0.65;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .card:hover .button-like {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--gold-hover);
+}
+
+.projects .card:hover .card-image {
+  transform: scale(1.02);
+  filter: brightness(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects .card,
+  .projects .card-image,
+  .projects .button-like {
+    transition: none;
+    transform: none;
+  }
+}
+
+.card:hover .button-like.disabled {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .footer {
@@ -344,6 +481,16 @@ img {
   .grid,
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .about-body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: left;
   }
 
   .hero,

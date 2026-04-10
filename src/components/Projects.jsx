@@ -1,63 +1,141 @@
+import { useMemo, useState } from 'react'
 import overview from '../assets/overview.png'
 import creative from '../assets/creative.png'
 import ghost from '../assets/ghost.png'
 import flatrock from '../assets/flatrock.png'
+import website from '../assets/website.png'
+import raceperformance from '../assets/raceperformance.png'
+import peopleproject from '../assets/peopleproject.png'
 
-const cards = [
+const projects = [
   {
+    id: 'todays-overview',
+    title: "Today’s Overview",
+    description: 'Full-stack dashboard for news, weather, markets, and events with real-time updates and AWS deployment.',
     image: overview,
-    title: "TODAY'S OVERVIEW",
-    text:
-      <span>I designed and built Today’s Overview as a full-stack engineering project focused on modern development patterns and real-time data systems. It brings together news, weather, markets, and local events in a single dashboard using an event-driven architecture, live updates, and AWS deployment.  Check out my other projects on <a href="https://github.com/robfiero?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>!</span>,
-    button: 'TRY IT OUT',
-    link: 'https://todaysoverview.robfiero.net',
-    fit: 'cover',
+    buttonLabel: 'TRY IT OUT',
+    buttonHref: 'https://todaysoverview.robfiero.net',
+    category: 'Engineering',
+    status: 'Live',
+    tags: ['Java', 'React', 'AWS', 'Full-Stack'],
+    imageFit: 'contain',
   },
   {
+    id: 'portfolio-website',
+    title: 'Portfolio Website',
+    description: 'Modern portfolio built for clarity, speed, and a clean presentation of work.',
+    image: website,
+    buttonLabel: 'VIEW PROJECT',
+    buttonHref: 'https://github.com/robfiero/portfolio-website',
+    category: 'Engineering',
+    status: 'Live',
+    tags: ['React', 'Frontend', 'UI', 'AWS'],
+    imageFit: 'cover',
+  },
+  {
+    id: 'race-data-analysis',
+    title: 'Race Data Analysis',
+    description: 'Race performance insights and trends. Dashboards and summaries coming soon.',
+    image: raceperformance,
+    buttonLabel: 'COMING SOON',
+    buttonHref: null,
+    category: 'Engineering',
+    status: 'Coming Soon',
+    tags: ['Python', 'Analytics', 'Data'],
+    imageFit: 'contain',
+  },
+  {
+    id: 'people-service',
+    title: 'People Service',
+    description: 'Service that manages people records with persisted storage and a clean API surface.',
+    image: peopleproject,
+    buttonLabel: 'VIEW PROJECT',
+    buttonHref: 'https://github.com/robfiero/project-people-file-persistence',
+    category: 'Engineering',
+    status: 'In Progress',
+    tags: ['Java', 'Persistence', 'API', 'Backend'],
+    imageFit: 'contain',
+  },
+  {
+    id: 'reusable-cli-toolkit',
+    title: 'Reusable CLI Toolkit',
+    description: 'Reusable CLI tooling to streamline developer workflows and automate common tasks.',
+    image: peopleproject,
+    buttonLabel: 'VIEW PROJECT',
+    buttonHref: 'https://github.com/robfiero/project-cli',
+    category: 'Engineering',
+    status: 'In Progress',
+    tags: ['CLI', 'Java', 'Tooling', 'Developer Experience'],
+    imageFit: 'contain',
+  },
+  {
+    id: 'creative',
+    title: 'Creative Works',
+    description:
+      'Photographs reimagined in artistic styles. New additions posted over time.',
     image: creative,
-    title: 'CREATIVE',
-    text:
-      'As a creative side project, I have been reimagining photographs from my collection in artistic styles that I enjoy. Please check out some of my work, and check back as I add more to the collection.',
-    button: 'VIEW MY CREATIVE WORKS',
-    link: 'https://sites.google.com/view/robfierocreative/home',
-    fit: 'cover',
+    buttonLabel: 'VIEW MY CREATIVE WORKS',
+    buttonHref: 'https://sites.google.com/view/robfierocreative/home',
+    category: 'Creative',
+    status: 'Active',
+    tags: ['Photography', 'Art'],
+    imageFit: 'cover',
   },
   {
+    id: 'ghost-train',
+    title: 'Ghost Train Trail Race',
+    description:
+      'Fundraising trail race with five distances and 700+ runners each October.',
     image: ghost,
-    title: 'GHOST TRAIN TRAIL RACE',
-    text:
-      'Ghost Train is a fundraising trail race that benefits the Conservation Commissions of Brookline and Milford, NH. The event includes five races, draws more than 700 participants each October, and has raised over $350,000 since its inception. I’ve been proud to serve as Race Director since 2022 and love the race and the community around it.',
-    button: 'LEARN MORE',
-    link: 'https://sites.google.com/site/ghosttrainrailtrailrace/',
-    fit: 'contain',
+    buttonLabel: 'LEARN MORE',
+    buttonHref: 'https://sites.google.com/site/ghosttrainrailtrailrace/',
+    category: 'Community',
+    status: 'Annual',
+    tags: ['Fundraising', 'Race Director', 'Conservation'],
+    imageFit: 'contain',
   },
   {
+    id: 'flat-rock',
+    title: 'Flat Rock Trail Race',
+    description:
+      'Fundraising trail race supporting the Humane Society for Greater Nashua.',
     image: flatrock,
-    title: 'FLAT ROCK TRAIL RACE',
-    text:
-      'Flat Rock Trail Race is a fundraising trail race that benefits the Humane Society for Greater Nashua, an organization I’ve supported through volunteering and fundraising since 2009. I launched the race in Dunstable, MA in 2025 and am excited to see how it grows.',
-    button: 'LEARN MORE',
-    link: 'https://sites.google.com/view/flatrocktrailrace/home',
-    fit: 'contain',
+    buttonLabel: 'LEARN MORE',
+    buttonHref: 'https://sites.google.com/view/flatrocktrailrace/home',
+    category: 'Community',
+    status: 'Annual',
+    tags: ['Fundraising', 'Race Director', 'Humane Society'],
+    imageFit: 'contain',
   },
 ]
 
-function ProjectCard({ image, title, text, button, link, fit }) {
+function ProjectCard({ image, title, description, buttonLabel, buttonHref, imageFit, imageFrame, imagePosition, tags }) {
+  const isDisabled = !buttonHref || buttonHref === '#'
   const cardContent = (
     <div className="card-content">
-      <div className="card-image-wrap">
-        <img src={image} alt={title} className={`card-image ${fit === 'contain' ? 'contain' : 'cover'}`} />
+      <div className={`card-image-wrap${imageFrame ? ` ${imageFrame}` : ''}`}>
+        <img
+          src={image}
+          alt={title}
+          className={`card-image ${imageFit === 'contain' ? 'contain' : 'cover'}`}
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
+        />
       </div>
-      <h3>{title}</h3>
-      <p>{text}</p>
+      <h3 className="card-title">{title}</h3>
+      <div className="card-tags">
+        {tags.map((tag) => (
+          <span key={tag} className="card-tag">{tag}</span>
+        ))}
+      </div>
+      <p>{description}</p>
       <div className="card-action">
-        <span className="button-like">{button}</span>
+        <span className={`button-like${isDisabled ? ' disabled' : ''}`}>{buttonLabel}</span>
       </div>
     </div>
   )
 
-  return link && link !== '#' ? (
-    <a className="card" href={link} target="_blank" rel="noreferrer">
+  return !isDisabled ? (
+    <a className="card" href={buttonHref} target="_blank" rel="noreferrer">
       {cardContent}
     </a>
   ) : (
@@ -66,15 +144,48 @@ function ProjectCard({ image, title, text, button, link, fit }) {
 }
 
 export default function Projects() {
+  const filters = ['All', 'Engineering', 'Creative', 'Community']
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'All') {
+      return projects
+    }
+    return projects.filter((project) => project.category === activeFilter)
+  }, [activeFilter])
+
   return (
     <section className="projects">
       <div className="container">
         <h2>Recent Projects</h2>
-        <p className="subtitle">A selection of technical, creative, and community work.</p>
+        <p className="subtitle">
+          A selection of engineering, creative, and community projects. More coding projects are available on{' '}
+          <a href="https://github.com/robfiero" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          .
+        </p>
+
+        <div className="project-filters" role="group" aria-label="Project categories">
+          {filters.map((filter) => {
+            const isActive = filter === activeFilter
+            return (
+              <button
+                key={filter}
+                type="button"
+                className={`filter-button${isActive ? ' active' : ''}`}
+                onClick={() => setActiveFilter(filter)}
+                aria-pressed={isActive}
+              >
+                {filter}
+              </button>
+            )
+          })}
+        </div>
 
         <div className="grid">
-          {cards.map((card) => (
-            <ProjectCard key={card.title} {...card} />
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
           ))}
         </div>
       </div>
