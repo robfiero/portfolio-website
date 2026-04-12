@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import overview from '../assets/overview.png'
-import creative from '../assets/creative.png'
+import creative from '../assets/creative.jpg'
 import ghost from '../assets/ghost.png'
 import flatrock from '../assets/flatrock.png'
 import website from '../assets/website.png'
@@ -109,7 +109,7 @@ const projects = [
   },
 ]
 
-function ProjectCard({ image, title, description, buttonLabel, buttonHref, imageFit, imageFrame, imagePosition, tags }) {
+const ProjectCard = memo(function ProjectCard({ image, title, description, buttonLabel, buttonHref, imageFit, imageFrame, imagePosition, tags }) {
   const isDisabled = !buttonHref || buttonHref === '#'
   const cardContent = (
     <div className="card-content">
@@ -119,6 +119,7 @@ function ProjectCard({ image, title, description, buttonLabel, buttonHref, image
           alt={title}
           className={`card-image ${imageFit === 'contain' ? 'contain' : 'cover'}`}
           style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          loading="lazy"
         />
       </div>
       <h3 className="card-title">{title}</h3>
@@ -135,13 +136,13 @@ function ProjectCard({ image, title, description, buttonLabel, buttonHref, image
   )
 
   return !isDisabled ? (
-    <a className="card" href={buttonHref} target="_blank" rel="noreferrer">
+    <a className="card" href={buttonHref} target="_blank" rel="noopener noreferrer">
       {cardContent}
     </a>
   ) : (
     <div className="card">{cardContent}</div>
   )
-}
+})
 
 export default function Projects() {
   const filters = ['All', 'Engineering', 'Creative', 'Community']

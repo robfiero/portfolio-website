@@ -1,4 +1,3 @@
-import '../styles.css';
 import headshot from '../assets/me.jpeg';
 
 const About = () => {
