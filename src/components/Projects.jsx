@@ -34,14 +34,14 @@ const projects = [
   },
   {
     id: 'race-data-analysis',
-    title: 'Race Data Analysis',
+    title: 'Race Data Analytics',
     description: 'Race performance insights and trends. Dashboards and summaries coming soon.',
     image: raceperformance,
-    buttonLabel: 'COMING SOON',
-    buttonHref: null,
+    buttonLabel: 'TRY IT OUT',
+    buttonHref: 'https://racestats.robfiero.net/',
     category: 'Engineering',
     status: 'Coming Soon',
-    tags: ['Python', 'Analytics', 'Data'],
+    tags: ['Node.js', 'React', 'AWS', 'Analytics'],
     imageFit: 'contain',
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     description:
       'Photographs reimagined in artistic styles. New additions posted over time.',
     image: creative,
-    buttonLabel: 'VIEW MY CREATIVE WORKS',
+    buttonLabel: 'EXPLORE MY ARTWORK',
     buttonHref: 'https://sites.google.com/view/robfierocreative/home',
     category: 'Creative',
     status: 'Active',
