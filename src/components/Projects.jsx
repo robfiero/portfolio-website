@@ -34,8 +34,8 @@ const projects = [
   },
   {
     id: 'race-data-analysis',
-    title: 'Race Data Analytics',
-    description: 'Race performance insights and trends. Dashboards and summaries coming soon.',
+    title: 'Race Analytics',
+    description: 'Surface the data so race directors can understand their events clearly.',
     image: raceperformance,
     buttonLabel: 'TRY IT OUT',
     buttonHref: 'https://racestats.robfiero.net/',
