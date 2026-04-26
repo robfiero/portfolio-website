@@ -1,11 +1,14 @@
 import { memo, useMemo, useState } from 'react'
 import overview from '../assets/overview.png'
 import creative from '../assets/creative.jpg'
+import creativeWebsite from '../assets/creative-website.png'
 import ghost from '../assets/ghost.png'
 import flatrock from '../assets/flatrock.png'
 import website from '../assets/website.png'
 import raceperformance from '../assets/raceperformance.png'
 import peopleproject from '../assets/peopleproject.png'
+
+const CREATIVE_WEBSITE_REPOSITORY_URL = 'https://github.com/robfiero/creative-website' // TODO: Replace with the final repository URL.
 
 const projects = [
   {
@@ -21,18 +24,6 @@ const projects = [
     imageFit: 'contain',
   },
   {
-    id: 'portfolio-website',
-    title: 'Portfolio Website',
-    description: 'Modern portfolio built for clarity, speed, and a clean presentation of work.',
-    image: website,
-    buttonLabel: 'VIEW PROJECT',
-    buttonHref: 'https://github.com/robfiero/portfolio-website',
-    category: 'Engineering',
-    status: 'Live',
-    tags: ['React', 'Frontend', 'UI', 'AWS'],
-    imageFit: 'cover',
-  },
-  {
     id: 'race-data-analysis',
     title: 'Race Analytics',
     description: 'Surface the data so race directors can understand their events clearly.',
@@ -43,6 +34,31 @@ const projects = [
     status: 'Coming Soon',
     tags: ['Node.js', 'React', 'AWS', 'Analytics'],
     imageFit: 'contain',
+  },
+  {
+    id: 'creative-website',
+    title: 'Creative Website',
+    description:
+      'A metadata-driven React site for showcasing creative image collections, with content managed through structured YAML data.',
+    image: creativeWebsite,
+    buttonLabel: 'VIEW PROJECT',
+    buttonHref: CREATIVE_WEBSITE_REPOSITORY_URL,
+    category: 'Engineering',
+    status: 'In Progress',
+    tags: ['React', 'TypeScript', 'Metadata-Driven'],
+    imageFit: 'cover',
+  },
+  {
+    id: 'portfolio-website',
+    title: 'Portfolio Website',
+    description: 'Modern portfolio built for clarity, speed, and a clean presentation of work.',
+    image: website,
+    buttonLabel: 'VIEW PROJECT',
+    buttonHref: 'https://github.com/robfiero/portfolio-website',
+    category: 'Engineering',
+    status: 'Live',
+    tags: ['React', 'Frontend', 'UI', 'AWS'],
+    imageFit: 'cover',
   },
   {
     id: 'people-service',
@@ -72,10 +88,10 @@ const projects = [
     id: 'creative',
     title: 'Creative Works',
     description:
-      'Photographs reimagined in artistic styles. New additions posted over time.',
+      'A personal portfolio of original photographs transformed into illustrated, artistic, and historically inspired interpretations.',
     image: creative,
     buttonLabel: 'EXPLORE MY ARTWORK',
-    buttonHref: 'https://sites.google.com/view/robfierocreative/home',
+    buttonHref: 'https://creative.robfiero.net/',
     category: 'Creative',
     status: 'Active',
     tags: ['Photography', 'Art'],
