@@ -10,7 +10,7 @@ export default function Hero() {
 
           <div className="hero-sub">
             <div>
-              Software Engineering Manager | UI Development | Java | Cloud Platforms | Distributed Systems
+              Product Creator | Software Engineering Manager | UI Development | Cloud Platforms | Distributed Systems
             </div>
             <div>
               Team And Community Builder | Runner | Ultramarathoner | Race Director | Charity Fundraiser | Photographer |
